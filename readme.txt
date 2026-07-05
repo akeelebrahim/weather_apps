@@ -25,5 +25,5 @@ The app is fully localized to handle the unique weather patterns of Bahrain, fro
 
 ## Resources:
 * Report by Ministry of Transportation and Telecommunications
-* Title: METEOROLOGICAL DIRECTORATE CLIMATE SECTION - MONTHLY WEATHER SUMMARY – JUNE 2023
+* Title: METEOROLOGICAL DIRECTORATE CLIMATE SECTION
 * Link: https://www.bahrainweather.gov.bh/files/climate/monthly-climate-summary.pdf
