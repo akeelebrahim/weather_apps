@@ -4,9 +4,14 @@ import pandas as pd
 import os
 import random
 
+# Build absolute paths so the app works no matter which folder it is launched from.
+# BASE_DIR = the project root (one level up from this src/ folder)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_FILE = os.path.join(BASE_DIR, "data", "weather_observations.csv")
+
 
 # Helper function to safely read the CSV file across all other functions
-def load_data(filename="weather_observations.csv"):
+def load_data(filename=DATA_FILE):
     """
     Safely reads the weather database. If the file is missing,
     it returns a clean DataFrame with the correct columns[cite: 1].
@@ -19,7 +24,7 @@ def load_data(filename="weather_observations.csv"):
 
 #-------------------------------------------------------------------------Menu option 1
 # This function for adding new observation
-def add_observation(date_str, temp, condition, humidity, wind, filename="weather_observations.csv"):
+def add_observation(date_str, temp, condition, humidity, wind, filename=DATA_FILE):
     # 1. Read my csv file that I put in the same path using our helper function
     df = load_data(filename)
     
@@ -32,7 +37,7 @@ def add_observation(date_str, temp, condition, humidity, wind, filename="weather
 
 #-------------------------------------------------------------------------Menu option 2
 # This function is for viewing weather stats
-def get_weather_stats(filename="weather_observations.csv"):
+def get_weather_stats(filename=DATA_FILE):
     """
     Grabs our weather data file and calculates the core metrics 
     required by our project specs (Averages, Extrems, and Modes)[cite: 1].
@@ -56,7 +61,7 @@ def get_weather_stats(filename="weather_observations.csv"):
     return stats
 
 #-------------------------------------------------------------------------Menu option 3
-def search_by_date(target_date, filename="weather_observations.csv"):
+def search_by_date(target_date, filename=DATA_FILE):
     """
     Filters our weather database to find rows matching a specific date[cite: 1].
     Returns a DataFrame of matches, or an empty DataFrame if nothing is found.
@@ -75,7 +80,7 @@ def search_by_date(target_date, filename="weather_observations.csv"):
 #-------------------------------------------------------------------------Menu option 4
 def display_all():
     """Display all observations"""
-    df = load_data('weather_observations.csv')
+    df = load_data()
     st.dataframe(df, use_container_width=True)
     return
 

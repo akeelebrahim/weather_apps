@@ -1,9 +1,14 @@
 import streamlit as st
 from PIL import Image
 import pandas as pd
+import os
 from datetime import datetime
 import weather_utils as utils  # Import the helper logic
+
+# Project root = one level up from this src/ folder (used to locate assets)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # -------------------------------------------------------------- Aditional part to change the BG image
+# https://medium.com/@hriskikesh.yadav332/setting-cool-background-image-in-streamlit-app-cab8c8ee2a8f
 page_element="""
 <style>
 [data-testid="stAppViewContainer"]{
@@ -19,7 +24,7 @@ page_element="""
 st.markdown(page_element, unsafe_allow_html=True)
 # -------------------------------------------------------------- Aditional part to change the BG image
 
-icon_image = Image.open("weather_icon.png")
+icon_image = Image.open(os.path.join(BASE_DIR, "assets", "weather_icon.png"))
 
 st.set_page_config(
     page_title="🌦️ Weather Observation App",
@@ -64,7 +69,7 @@ elif navigation == "1. 📝 Record Weather observation":
         date_input = st.date_input("Select Date", value=datetime.today())
         date_str = date_input.strftime("%m-%d-%Y") # Formats to MM-DD-YYYY
         
-        temp = st.number_input("Temperature (°C)", min_value=38.0, max_value=60.0, step=0.1)
+        temp = st.number_input("Temperature (°C)", min_value=0, max_value=60.0, step=0.1)
         condition = st.selectbox("Condition", ["Sunny", "Cloudy", "Rainy", "Dusty"])
         humidity = st.slider("Humidity (%)", min_value=0, max_value=100, value=50)
         wind = st.number_input("Wind Speed (km/h)", min_value=0, max_value=150, step=1)
@@ -128,6 +133,7 @@ elif navigation == "4. 📋 View all observations":
 elif navigation == "🚀 Mandatory Stretch Goals":
     st.header("🚀 Advanced Analytics (Mandatory Stretch Goals)")
 #-------------------------- to large the fonts, it was very small
+# https://docs.streamlit.io/develop/api-reference/text/st.markdown
     st.markdown("""
     <style>
     button[data-baseweb="tab"] p {

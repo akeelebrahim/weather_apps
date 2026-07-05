@@ -1,0 +1,12 @@
+# Python auto-generated files
+__pycache__/
+*.pyc
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# MS Office temp/lock files
+~$*
+
+# Old drafts - not part of the submission
+archive/
