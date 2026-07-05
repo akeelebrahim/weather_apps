@@ -69,7 +69,7 @@ elif navigation == "1. 📝 Record Weather observation":
         date_input = st.date_input("Select Date", value=datetime.today())
         date_str = date_input.strftime("%m-%d-%Y") # Formats to MM-DD-YYYY
         
-        temp = st.number_input("Temperature (°C)", min_value=0, max_value=60.0, step=0.1)
+        temp = st.number_input("Temperature (°C)", min_value=0.0, max_value=60.0, step=0.1)
         condition = st.selectbox("Condition", ["Sunny", "Cloudy", "Rainy", "Dusty"])
         humidity = st.slider("Humidity (%)", min_value=0, max_value=100, value=50)
         wind = st.number_input("Wind Speed (km/h)", min_value=0, max_value=150, step=1)
