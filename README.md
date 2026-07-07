@@ -43,7 +43,7 @@ All 5 required stretch goals are implemented under the **🚀 Mandatory Stretch 
    ```bash
    streamlit run src/main_app.py
    ```
-## App Video tutorial available in Assets folder
+## App Video tutorial available in 'Assets' folder
 ## App live link to test it: https://weatherapps.streamlit.app/
 ## Presentation
 * Slide deck: `docs/The Weather Tracker App Slides.pptx` (included in this repository)
