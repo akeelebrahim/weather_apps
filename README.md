@@ -43,7 +43,7 @@ All 5 required stretch goals are implemented under the **🚀 Mandatory Stretch 
    ```bash
    streamlit run src/main_app.py
    ```
-## App Video tutorial available in 'Assets' folder
+## App Video tutorial available in '~\Assets' folder
 ### App live link to test: Best viewed using full screen 90% browser zoom
 # https://weatherapps.streamlit.app/
 ## Presentation
