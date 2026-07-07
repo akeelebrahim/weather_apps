@@ -45,6 +45,7 @@ All 5 required stretch goals are implemented under the **🚀 Mandatory Stretch 
    ```
 ## App Video tutorial available in 'Assets' folder
 ## App live link to test it: https://weatherapps.streamlit.app/
+    * Best viewed using full screen 90% browser zoom
 ## Presentation
 * Slide deck: `docs/The Weather Tracker App Slides.pptx` (included in this repository)
 * Repository: https://github.com/akeelebrahim/weather_apps
